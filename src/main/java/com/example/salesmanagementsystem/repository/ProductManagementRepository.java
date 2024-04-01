@@ -9,4 +9,5 @@ public interface ProductManagementRepository extends JpaRepository<ProductManage
     ProductManagement findProductManagementById(Long id);
 
     Page<ProductManagement> findAllById(Long productId, Pageable pageable);
+
 }

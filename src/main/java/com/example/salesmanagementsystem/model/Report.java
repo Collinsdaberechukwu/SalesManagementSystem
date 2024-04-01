@@ -1,5 +1,6 @@
 package com.example.salesmanagementsystem.model;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,12 +12,24 @@ import java.util.List;
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Builder
+@Entity
 public class Report {
-    private int totalSales;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
+    @Column(name = "total_sales")
+    private Integer totalSales;
+
+    @Column(name = "total-revenue")
     private BigDecimal totalRevenue;
 
+    @OneToMany
+    @JoinColumn(name = "product_management")
     private List<ProductManagement> topSellingProductManagements;
 
+    @OneToMany
+    @JoinColumn(name = "client_management")
     private List<ClientManagement> topPerformingSellers;
+
 }

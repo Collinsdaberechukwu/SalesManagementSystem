@@ -5,7 +5,6 @@ import com.example.salesmanagementsystem.dto.request.ProductManagementUpdateRequ
 import com.example.salesmanagementsystem.dto.response.ProductManagementCreationResponse;
 import com.example.salesmanagementsystem.dto.response.ProductManagementUpdateResponse;
 import com.example.salesmanagementsystem.dto.response.ProductResponse;
-import com.example.salesmanagementsystem.model.ProductManagement;
 import com.example.salesmanagementsystem.service.ProductManagementService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

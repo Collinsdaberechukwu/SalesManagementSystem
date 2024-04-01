@@ -22,17 +22,17 @@ public class SalesManagementController {
     public ResponseEntity<SalesCreationResponse> createSales(@Valid  @RequestBody SalesCreationRequest salesCreationRequest){
         return salesManagementService.createSales(salesCreationRequest);
     }
-    @PutMapping("/{salesId}")
+    @PutMapping("/update-sales/{salesId}")
     public ResponseEntity<SalesUpdateResponse> updateSales(@PathVariable Long salesId, @RequestBody SalesUpdateRequest salesUpdateRequest) {
         return salesManagementService.updateSales(salesId, salesUpdateRequest);
     }
 
-    @GetMapping("achieve-sales/{salesId}")
+    @GetMapping("/achieve-sales/{salesId}")
     public ResponseEntity<SalesResponse> getSales(@PathVariable Long salesId) {
         return salesManagementService.getSales(salesId);
     }
 
-    @DeleteMapping("/delete{salesId}")
+    @DeleteMapping("/delete/{salesId}")
     public ResponseEntity<String> deleteSales(@PathVariable Long salesId) {
         return salesManagementService.deleteSales(salesId);
     }

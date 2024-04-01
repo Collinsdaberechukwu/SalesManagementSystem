@@ -19,22 +19,22 @@ public class AuditController {
     private final AuditService auditService;
 
 
-    @PostMapping("create_audit")
+    @PostMapping("/create_audit")
     public ResponseEntity<AuditCreationResponse> createAudit(@Valid @RequestBody AuditCreationRequest auditCreationRequest) {
         return auditService.createAudit(auditCreationRequest);
     }
 
-    @PutMapping("update-audit/{auditId}")
+    @PutMapping("/update-audit/{auditId}")
     public ResponseEntity<AuditUpdateResponse> updateAudit(@PathVariable Long auditId, @RequestBody AuditUpdateRequest auditUpdateRequest) {
         return auditService.updateAudit(auditId, auditUpdateRequest);
     }
 
-    @GetMapping("achieve-audit/{auditId}")
+    @GetMapping("/achieve-audit/{auditId}")
     public ResponseEntity<AuditResponse> getAudit(@PathVariable Long auditId) {
         return auditService.getAudit(auditId);
     }
 
-    @DeleteMapping("delete/{auditId}")
+    @DeleteMapping("/delete/{auditId}")
     public ResponseEntity<String> deleteAudit(@PathVariable Long auditId) {
         return auditService.deleteAudit(auditId);
     }

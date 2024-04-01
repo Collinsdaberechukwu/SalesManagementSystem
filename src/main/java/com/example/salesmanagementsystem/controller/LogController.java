@@ -17,22 +17,22 @@ public class LogController {
 
     private final LogService logService;
 
-    @PostMapping
+    @PostMapping("/create-log")
     public ResponseEntity<LogCreationResponse> createLog(@RequestBody LogCreationRequest logCreationRequest) {
         return logService.createLog(logCreationRequest);
     }
 
-    @PutMapping("update-log/{logId}")
+    @PutMapping("/update-log/{logId}")
     public ResponseEntity<LogUpdateResponse> updateLog(@PathVariable Long logId, @RequestBody LogUpdateRequest logUpdateRequest) {
         return logService.updateLog(logId, logUpdateRequest);
     }
 
-    @GetMapping("achieve-log/{logId}")
+    @GetMapping("/achieve-log/{logId}")
     public ResponseEntity<LogResponse> getLog(@PathVariable Long logId) {
         return logService.getLog(logId);
     }
 
-    @DeleteMapping("delete/{logId}")
+    @DeleteMapping("/delete/{logId}")
     public ResponseEntity<String> deleteLog(@PathVariable Long logId) {
         return logService.deleteLog(logId);
     }

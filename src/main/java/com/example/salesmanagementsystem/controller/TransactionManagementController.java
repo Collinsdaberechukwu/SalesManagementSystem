@@ -22,18 +22,18 @@ public class TransactionManagementController {
     public ResponseEntity<TransactionCreationResponse> createTransaction(@Valid @RequestBody TransactionCreationRequest request) {
         return transactionManagementService.createTransaction(request);
     }
-    @PutMapping("/{id}")
+    @PutMapping("/update-transaction/{id}")
     public ResponseEntity<TransactionUpdateResponse> updateTransaction(@PathVariable Long id,
                                                                        @RequestBody TransactionUpdateRequest transactionUpdateRequest) {
         return transactionManagementService.updateTransaction(id, transactionUpdateRequest);
     }
 
-    @GetMapping("achieve-transaction/{id}")
+    @GetMapping("/achieve-transaction/{id}")
     public ResponseEntity<TransactionResponse> getTransaction(@PathVariable Long id) {
         return transactionManagementService.getTransaction(id);
     }
 
-    @DeleteMapping("delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteTransaction(@PathVariable Long id) {
         return transactionManagementService.deleteTransaction(id);
     }
